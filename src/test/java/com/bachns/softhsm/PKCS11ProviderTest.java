@@ -45,9 +45,8 @@ class PKCS11ProviderTest {
 
 	public static boolean checkEnvironmentVariables() {
 		Set<String> envVariables = System.getenv().keySet();
-		List<String> list = Arrays.asList(
-				"SOFTHSM2_CONF", "HSM_CONF",
-				"HSM_KEY_ALIAS", "HSM_KEY_PASS", "HSM_TOKEN_PASS");
+		List<String> list = Arrays.asList("HSM_CONF", "HSM_KEY_ALIAS",
+				"HSM_KEY_PASS", "HSM_TOKEN_PASS");
 		boolean containsAll = envVariables.containsAll(list);
 		if (!containsAll) {
 			System.err.println("The tests were skipped due to missing one of the environment variables: " +
