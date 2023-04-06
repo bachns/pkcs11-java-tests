@@ -88,6 +88,7 @@ class PKCS11ProviderTest {
 		List<String> signatureAlgorithms = PKCS11Provider.provider.getServices().stream()
 				.filter(s -> s.getType().contentEquals("Signature"))
 				.map(Service::getAlgorithm).toList();
+		signatureAlgorithms.forEach(System.out::println);
 		assertThat(signatureAlgorithms,
 				hasItems(
 						"SHA256withRSA", "SHA384withRSA", "SHA512withRSA",
