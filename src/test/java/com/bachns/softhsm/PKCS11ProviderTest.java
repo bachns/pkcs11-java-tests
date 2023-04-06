@@ -68,6 +68,7 @@ class PKCS11ProviderTest {
 		assertNotNull(PKCS11Provider.provider);
 		List<String> providers = Arrays.stream(Security.getProviders())
 				.map(Provider::getName).toList();
+		providers.forEach(System.out::println);
 		assertThat(providers, hasItems("SunPKCS11-SoftHSM"));
 	}
 	@Test
